@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  </head>
+  <body>
+    <header class=" pb-4  position-relative">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="index.html" class="logo"
+          ><img src="./images/logo.svg" alt="Shortly"
+        /></a>
+        <button class="toggler border-0 bg-white d-flex justify-content-center flex-column d-lg-none">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav
+          class="d-lg-flex justify-content-between "
+        >
+          <ul class="links m-0 list-unstyled d-lg-flex">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+          <div class="btns d-flex flex-column flex-lg-row">
+            <a href="#" class="btn ps-0 pe-0">Login</a>
+            <a
+              class="btn  rounded-pill  text-light "
+              href="#"
+              >Sign Up</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="landing text-center text-lg-start">
+      <div class="container">
+        <div class="img-holder mb-5">
+          <img src="./images/illustration-working.svg" alt="illustration working">
+        </div>
+        <div class="info">
+          <h1 class="fw-bold">More than just shorter links</h1>
+          <p>
+            Build your brand’s recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <a href="#" class="btn main-btn rounded-pill text-light mt-4"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="statistics text-center">
+      <div class="container">
+        <div class="url-container  rounded-3">
+          <form class="d-flex flex-column flex-md-row">
+            <input
+              class="my-input p-2 mb-3 m-md-0 me-md-3 rounded border-0 flex-md-grow-1"
+              type="text"
+              placeholder="Shorten a link here..."
+            />
+            <button
+              class="submit-btn main-btn rounded fs-6 border-0 text-light"
+            >
+              Shorten It!
+            </button>
+          </form>
+        </div>
+        <div class="links-holder"></div>
+       <div class="heading">
+        <h2 class="fw-bold mb-3">Advanced Statistics</h2>
+        <p class="">
+          Track how your links are performing across the web with  our advanced
+          statistics dashboard.
+        </p>
+       </div>
+        <div class="my-row pb-5 position-relative ">
+          <div class="col text-lg-start bg-light  rounded-3 position-relative">
+            <div class="img d-flex justify-content-center align-items-center">
+              <img src="./images/icon-brand-recognition.svg" alt="" />
+            </div>
+            <h3 class="fw-bold">Brand Recognition</h3>
+            <p>
+              Boost your brand recognition with each click. Generic links don’t
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </p>
+          </div>
+          <div class="col text-lg-start bg-light  rounded-3 position-relative">
+            <div class="img d-flex justify-content-center align-items-center">
+              <img src="./images/icon-detailed-records.svg" alt="" />
+            </div>
+            <h3 class="fw-bold">Detailed Records</h3>
+            <p>
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
+            </p>
+          </div>
+          <div class="col text-lg-start bg-light  rounded-3 position-relative">
+            <div class="img d-flex justify-content-center align-items-center">
+              <img src="./images/icon-fully-customizable.svg" alt="" />
+            </div>
+            <h3 class="fw-bold">Fully Customizable</h3>
+            <p>
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="boost text-center">
+      <h4 class="fw-bold fs-1 text-light pb-4">Boost your links today</h4>
+      <a class="btn main-btn rounded-pill text-light" href="#">Get Started</a>
+    </div>
+
+    <footer class="text-center text-light text-lg-start fs-6 pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5 p-0">
+            <a href="index.html" class="logo"
+              ><img src="./images/footer-logo.svg" alt="Shortly"
+            /></a>
+          </div>
+          <div class=" col-md-6 col-lg-2 mb-4 p-0">
+            <h5 class="mb-4">Features</h5>
+            <ul class="list-unstyled ">
+              <li><a href="#">Link Shortening</a></li>
+              <li><a href="#">Branded Links</a></li>
+              <li><a href="#">Analytics</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-2 mb-4">
+            <h5 class="mb-4">Resources</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-2 mb-4">
+            <h5 class="mb-4">Company</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-2">
+            <ul class="social list-unstyled d-flex justify-content-center align-items-center gap-4 m-0 ">
+              <li><a href="#"><i class="fa-brands fa-square-facebook fa-2x"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-pinterest fa-2x"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+            </ul>
+          </div>
+
+      </div>
+    </footer>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
