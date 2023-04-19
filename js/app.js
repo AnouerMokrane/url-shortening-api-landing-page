@@ -6,8 +6,6 @@ let submitBtn = document.querySelector(
 );
 let linksHolder = document.querySelector(".links-holder");
 
-let dataArr = [];
-
 toggler.addEventListener("click", () => {
   toggler.classList.toggle("active");
   nav.classList.toggle("show");
@@ -31,40 +29,51 @@ submitBtn.addEventListener("click", (e) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        let myObj = {
-          longUrl: data.long_url,
-          shortUrl: data.link,
-        };
-        dataArr.push(myObj);
-        addDataToPage(dataArr);
-        input.value = "";
-
-        let copySpan = document.querySelector(".copy");
-
-        copySpan.addEventListener("click", (e) => {
-          e.currentTarget.textContent = "Copied";
-          e.currentTarget.style.backgroundColor = "hsl(257, 27%, 26%)";
-        });
+        if (data.message !== "MONTHLY_ENCODE_LIMIT_REACHE") {
+          let myObj = {
+            longUrl: data.long_url,
+            shortUrl: data.link,
+          };
+          addDataToPage(longUrl, myObj.shortUrl);
+          input.value = "";
+        } else {
+          linksHolder.innerHTML = `<p>${data.description}</p>`;
+        }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        linksHolder.innerHTML = "There is an err try again";
+      });
   }
 });
 
-function addDataToPage(arr) {
-  linksHolder.innerHTML = "";
-  let arrDivs = [];
-  arr.map((ele) => {
-    let myDiv = `
-    <div class="link">
-      <div class="long-url">${ele.longUrl}</div>
-      <div class="short-link">${ele.shortUrl}</div>
-      <span class="copy">Copy</span>
-    </div>
-    `;
+function addDataToPage(longUrl, shortUrl) {
+  let linkDiv = document.createElement("div");
+  linkDiv.className = "link";
 
-    if (!arrDivs.includes(myDiv)) {
-      arrDivs.push(myDiv);
-    }
-    linksHolder.innerHTML = arrDivs.join("");
+  let longUrlDiv = document.createElement("div");
+  longUrlDiv.className = "long-url";
+  longUrlDiv.appendChild(document.createTextNode(longUrl));
+
+  let shortUrlDiv = document.createElement("div");
+  shortUrlDiv.className = "short-link";
+  shortUrlDiv.appendChild(document.createTextNode(shortUrl));
+
+  let span = document.createElement("span");
+  span.className = "copy";
+  span.textContent = "Copy";
+
+  linkDiv.appendChild(longUrlDiv);
+  linkDiv.appendChild(shortUrlDiv);
+  linkDiv.appendChild(span);
+
+  linksHolder.appendChild(linkDiv);
+
+  //copy the url
+  let copySpan = document.querySelector(".copy");
+
+  copySpan.addEventListener("click", (e) => {
+    navigator.clipboard.writeText(shortUrl);
+    e.currentTarget.textContent = "Copied";
+    e.currentTarget.style.backgroundColor = "hsl(257, 27%, 26%)";
   });
 }
