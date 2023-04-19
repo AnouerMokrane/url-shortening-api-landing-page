@@ -29,7 +29,7 @@ submitBtn.addEventListener("click", (e) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.message !== "MONTHLY_ENCODE_LIMIT_REACHE") {
+        if (data.message !== "MONTHLY_ENCODE_LIMIT_REACHED") {
           let myObj = {
             longUrl: data.long_url,
             shortUrl: data.link,
